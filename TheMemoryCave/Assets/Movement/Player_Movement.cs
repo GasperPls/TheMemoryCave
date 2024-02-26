@@ -6,10 +6,13 @@ using UnityEngine.InputSystem;
 public class Player_Movement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1;
-    [SerializeField] float jumpPower = 1;
+    [SerializeField] float jumpPower = 50;
+    /// <summary> How much time, in seconds, between jumps there should be </summary>
+    [SerializeField] float jumpDelay = 1f;
     Player_Controls playerControls;
     Rigidbody2D rb;
     int jumpCounter = 2;
+    float timeSinceLastJump = 0f;
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,15 +26,24 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // Temp way to reset jumps
+        // Need to replace the condition with a ground checker . . . if(touchingGround) { . . . }
+        if (rb.velocity.y >= -float.Epsilon && rb.velocity.y <= float.Epsilon && jumpCounter < 2)
+        {
+            Debug.Log("Reset Jumps!");
+            jumpCounter = 2;
+        }
     }
 
     void ActivateJump(InputAction.CallbackContext context) 
     {
         if(!context.performed || jumpCounter <= 0) { return; }
-        Debug.Log("Am jumping!");
+        // Debug.Log("Time since last jump: " + Time.time + "\nCurrent Time: " + timeSinceLastJump);
+        // if(Time.time - timeSinceLastJump <= jumpDelay) { return; }
+        // timeSinceLastJump = Time.time;
         Vector2 jumpForce = jumpPower * this.transform.up;
-        rb.AddForce(jumpForce);
+        if(rb.velocity.y < 0) { rb.velocity = new Vector2(rb.velocity.x, 0); }
+        rb.AddForce(jumpForce, ForceMode2D.Impulse);
         jumpCounter--;
         Debug.Log("Jumps left: " + jumpCounter);
     }
