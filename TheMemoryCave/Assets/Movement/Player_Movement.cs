@@ -10,11 +10,13 @@ public class Player_Movement : MonoBehaviour
     /// <summary> How much time, in seconds, between jumps there should be </summary>
     [SerializeField] float jumpDelay = 1f;
     [SerializeField] bool isDoubleJump = true;
+    [SerializeField] float floatGravScale = 1;
 
     int maxJumps = 2;
     Player_Controls playerControls;
     Rigidbody2D rb;
     int jumpCounter;
+    float defaultGravScale = 1;
     // Start is called before the first frame update
     void Awake()
     {
@@ -30,6 +32,19 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ResetJumpCounter();
+        Move();
+        rb.gravityScale = (rb.velocity.y < 0f && playerControls.Movement.Float.inProgress) ? floatGravScale : defaultGravScale;
+    }
+
+    private void Move()
+    {
+        float moveVelocityX = playerControls.Movement.Forward.ReadValue<float>() * moveSpeed;
+        rb.velocity = new Vector2(moveVelocityX, rb.velocity.y);
+    }
+
+    private void ResetJumpCounter()
+    {
         maxJumps = (isDoubleJump) ? 2 : 1;
         // Temp way to reset jumps
         // Need to replace the condition with a ground checker . . . if(touchingGround) { . . . }
@@ -38,8 +53,6 @@ public class Player_Movement : MonoBehaviour
             Debug.Log("Reset Jumps!");
             jumpCounter = maxJumps;
         }
-        float moveVelocityX = playerControls.Movement.Forward.ReadValue<float>() * moveSpeed;
-        rb.velocity = new Vector2(moveVelocityX, rb.velocity.y);
     }
 
     void ActivateJump(InputAction.CallbackContext context) 
