@@ -46,9 +46,18 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""FastFall"",
+                    ""name"": ""Dash"",
                     ""type"": ""Button"",
-                    ""id"": ""c98fc423-b900-44ef-be13-d0a4b4179740"",
+                    ""id"": ""5c579a17-0a98-4402-9918-d68ba3ff8209"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Float"",
+                    ""type"": ""Button"",
+                    ""id"": ""e37a4751-3b6d-4864-bb8b-dd9573f373a0"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -90,79 +99,90 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Alt"",
-                    ""id"": ""0cf8fce8-8367-4550-9d7d-66721178c60c"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""99cbf798-0e5e-429a-b8d2-c570cc20334c"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Forward"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Dash Right"",
+                    ""id"": ""4e9666fd-ee72-4108-bfa3-77e7a6e5e200"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""3c632fb7-d01d-456d-8abf-a2e2a396e698"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""name"": ""modifier"",
+                    ""id"": ""c4c4ac31-1cf0-4f1c-b5ac-2c80b59f1749"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Forward"",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""82f282a8-f144-4221-967c-715326e9212e"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""name"": ""binding"",
+                    ""id"": ""62b23fb1-0f8f-4906-90ce-8c6d19586cf6"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Forward"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Dash Left"",
+                    ""id"": ""7c0cdcd5-55fa-46ef-9443-08a8c9e72201"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""a7e7308d-63d9-41cf-af0f-dcf947f9fea5"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""9e3dd74b-235c-4d8f-a583-7c901929ef74"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
-                    ""id"": ""99cbf798-0e5e-429a-b8d2-c570cc20334c"",
+                    ""id"": ""a7d39717-d269-48ec-abc3-a86e3afc4636"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1887dcff-3d9c-406f-b9e9-d08f371a139c"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""64b64020-34ef-49ba-b37b-ade317e95eed"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""FastFall"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5cc3ad68-ccab-405b-a9c2-94d4ee98cb7c"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""FastFall"",
+                    ""action"": ""Float"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -203,7 +223,8 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Forward = m_Movement.FindAction("Forward", throwIfNotFound: true);
         m_Movement_Jump = m_Movement.FindAction("Jump", throwIfNotFound: true);
-        m_Movement_FastFall = m_Movement.FindAction("FastFall", throwIfNotFound: true);
+        m_Movement_Dash = m_Movement.FindAction("Dash", throwIfNotFound: true);
+        m_Movement_Float = m_Movement.FindAction("Float", throwIfNotFound: true);
         // Interact
         m_Interact = asset.FindActionMap("Interact", throwIfNotFound: true);
         m_Interact_OpenDoor = m_Interact.FindAction("OpenDoor", throwIfNotFound: true);
@@ -270,14 +291,16 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
     private readonly InputAction m_Movement_Forward;
     private readonly InputAction m_Movement_Jump;
-    private readonly InputAction m_Movement_FastFall;
+    private readonly InputAction m_Movement_Dash;
+    private readonly InputAction m_Movement_Float;
     public struct MovementActions
     {
         private @Player_Controls m_Wrapper;
         public MovementActions(@Player_Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Forward => m_Wrapper.m_Movement_Forward;
         public InputAction @Jump => m_Wrapper.m_Movement_Jump;
-        public InputAction @FastFall => m_Wrapper.m_Movement_FastFall;
+        public InputAction @Dash => m_Wrapper.m_Movement_Dash;
+        public InputAction @Float => m_Wrapper.m_Movement_Float;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -293,9 +316,12 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
-            @FastFall.started += instance.OnFastFall;
-            @FastFall.performed += instance.OnFastFall;
-            @FastFall.canceled += instance.OnFastFall;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
+            @Float.started += instance.OnFloat;
+            @Float.performed += instance.OnFloat;
+            @Float.canceled += instance.OnFloat;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -306,9 +332,12 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
-            @FastFall.started -= instance.OnFastFall;
-            @FastFall.performed -= instance.OnFastFall;
-            @FastFall.canceled -= instance.OnFastFall;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
+            @Float.started -= instance.OnFloat;
+            @Float.performed -= instance.OnFloat;
+            @Float.canceled -= instance.OnFloat;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -376,7 +405,8 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
     {
         void OnForward(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnFastFall(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+        void OnFloat(InputAction.CallbackContext context);
     }
     public interface IInteractActions
     {
