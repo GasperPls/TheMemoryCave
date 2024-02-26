@@ -38,7 +38,7 @@ public class Player_Movement : MonoBehaviour
             Debug.Log("Reset Jumps!");
             jumpCounter = maxJumps;
         }
-        float moveVelocityX = playerControls.Movement.Forward.ReadValue<float>() * moveSpeed * Time.deltaTime;
+        float moveVelocityX = playerControls.Movement.Forward.ReadValue<float>() * moveSpeed;
         rb.velocity = new Vector2(moveVelocityX, rb.velocity.y);
     }
 

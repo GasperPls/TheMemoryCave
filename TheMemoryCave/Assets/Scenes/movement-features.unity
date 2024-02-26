@@ -137,7 +137,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 22913531}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dedf88b3fce20b340a96717eb4097f43, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -413,7 +413,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dedf88b3fce20b340a96717eb4097f43, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -436,9 +436,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8abe5536080e64f8fdcaf282c0b4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpPower: 10
+  moveSpeed: 5
+  jumpPower: 5
   jumpDelay: 1
+  isDoubleJump: 1
 --- !u!1001 &2311587072494411582
 PrefabInstance:
   m_ObjectHideFlags: 0
