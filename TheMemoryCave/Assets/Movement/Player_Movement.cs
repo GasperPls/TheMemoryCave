@@ -10,11 +10,12 @@ public class Player_Movement : MonoBehaviour
     /// <summary> How much time, in seconds, between jumps there should be </summary>
     [SerializeField] float jumpDelay = 1f;
     [SerializeField] bool isDoubleJump = true;
-    [SerializeField] float floatGravScale = 1;
+    [SerializeField] float floatGravScale = 1f;
+    [SerializeField] float dashDist = 1f;
 
-    int maxJumps = 2;
     Player_Controls playerControls;
     Rigidbody2D rb;
+    int maxJumps = 2;
     int jumpCounter;
     float defaultGravScale = 1;
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class Player_Movement : MonoBehaviour
         playerControls = new();
         
         playerControls.Movement.Enable();
+        playerControls.Movement.Dash.performed += ActivateDash;
         playerControls.Movement.Jump.performed += ActivateJump;
 
         jumpCounter = maxJumps;
@@ -66,5 +68,20 @@ public class Player_Movement : MonoBehaviour
         rb.AddForce(jumpForce, ForceMode2D.Impulse);
         jumpCounter--;
         Debug.Log("Jumps left: " + jumpCounter);
+    }
+
+    void ActivateDash(InputAction.CallbackContext context)
+    {
+        if(!context.performed) { return; }
+        Debug.Log("Am Dashing");
+        int dashRight = (playerControls.Movement.Forward.ReadValue<float>() > 0f) ? 1 :  -1;
+        float dashTo = transform.position.x + dashDist * dashRight;
+        transform.position = new Vector2(dashTo,transform.position.y);
+    }
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position + Vector3.right * dashDist, 0.5f);
+        Gizmos.DrawWireSphere(transform.position + Vector3.left * dashDist, 0.5f);
     }
 }
