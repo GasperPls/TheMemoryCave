@@ -303,18 +303,9 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
             ""id"": ""4fa389e1-5f72-4869-a5a1-f1cba03afbab"",
             ""actions"": [
                 {
-                    ""name"": ""OpenDoor"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
-                    ""id"": ""9aafa800-5680-42ae-a7cf-4abfd532a91a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""InteractWithObject"",
-                    ""type"": ""Button"",
-                    ""id"": ""2e90a9d1-b979-4895-8cd8-c420f3c60ef3"",
+                    ""id"": ""0be30363-c05f-4cac-b06d-832f08073e04"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -324,45 +315,12 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""4103bdf9-d80a-4333-b3a3-4bc20df38b3e"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""id"": ""a6bd6c32-c253-4f63-be92-5ab0368b7c1c"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""OpenDoor"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bd581218-d474-42c9-88ed-01c8f8143268"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""OpenDoor"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b2a276a5-a27c-4e0b-a98f-dc1113416536"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""InteractWithObject"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8ab08a5b-2432-499e-8946-2112d7d441cd"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""InteractWithObject"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -379,8 +337,7 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
         m_Movement_Float = m_Movement.FindAction("Float", throwIfNotFound: true);
         // Interact
         m_Interact = asset.FindActionMap("Interact", throwIfNotFound: true);
-        m_Interact_OpenDoor = m_Interact.FindAction("OpenDoor", throwIfNotFound: true);
-        m_Interact_InteractWithObject = m_Interact.FindAction("InteractWithObject", throwIfNotFound: true);
+        m_Interact_Interact = m_Interact.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -512,14 +469,12 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
     // Interact
     private readonly InputActionMap m_Interact;
     private List<IInteractActions> m_InteractActionsCallbackInterfaces = new List<IInteractActions>();
-    private readonly InputAction m_Interact_OpenDoor;
-    private readonly InputAction m_Interact_InteractWithObject;
+    private readonly InputAction m_Interact_Interact;
     public struct InteractActions
     {
         private @Player_Controls m_Wrapper;
         public InteractActions(@Player_Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @OpenDoor => m_Wrapper.m_Interact_OpenDoor;
-        public InputAction @InteractWithObject => m_Wrapper.m_Interact_InteractWithObject;
+        public InputAction @Interact => m_Wrapper.m_Interact_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Interact; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -529,22 +484,16 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_InteractActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_InteractActionsCallbackInterfaces.Add(instance);
-            @OpenDoor.started += instance.OnOpenDoor;
-            @OpenDoor.performed += instance.OnOpenDoor;
-            @OpenDoor.canceled += instance.OnOpenDoor;
-            @InteractWithObject.started += instance.OnInteractWithObject;
-            @InteractWithObject.performed += instance.OnInteractWithObject;
-            @InteractWithObject.canceled += instance.OnInteractWithObject;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IInteractActions instance)
         {
-            @OpenDoor.started -= instance.OnOpenDoor;
-            @OpenDoor.performed -= instance.OnOpenDoor;
-            @OpenDoor.canceled -= instance.OnOpenDoor;
-            @InteractWithObject.started -= instance.OnInteractWithObject;
-            @InteractWithObject.performed -= instance.OnInteractWithObject;
-            @InteractWithObject.canceled -= instance.OnInteractWithObject;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IInteractActions instance)
@@ -571,7 +520,6 @@ public partial class @Player_Controls: IInputActionCollection2, IDisposable
     }
     public interface IInteractActions
     {
-        void OnOpenDoor(InputAction.CallbackContext context);
-        void OnInteractWithObject(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
