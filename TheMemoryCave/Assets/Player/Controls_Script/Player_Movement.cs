@@ -12,6 +12,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] bool isDoubleJump = true;
     [SerializeField] float floatGravScale = 1f;
     [SerializeField] float dashDist = 1f;
+    
 
     Player_Controls playerControls;
     Rigidbody2D rb;
@@ -29,6 +30,8 @@ public class Player_Movement : MonoBehaviour
         playerControls.Movement.Jump.performed += ActivateJump;
 
         jumpCounter = maxJumps;
+        
+        
     }
 
     // Update is called once per frame

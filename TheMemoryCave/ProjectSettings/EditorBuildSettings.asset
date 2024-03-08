@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_Scenes/Test_Door1.unity
     guid: b71a3fcb449026e4fa08320d575917f7
+  - enabled: 1
+    path: Assets/Scenes/Test_Scenes/Test_Door2.unity
+    guid: 69984b3ccdd7d3c4390ef279775b5d41
   m_configObjects: {}
