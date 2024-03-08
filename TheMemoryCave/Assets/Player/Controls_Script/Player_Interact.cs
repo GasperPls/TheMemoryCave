@@ -13,6 +13,8 @@ public class Player_Interact : MonoBehaviour
     Interactable currentInteract;
     int curScene;
 
+    static bool initialScene = true;
+
     void Awake()
     {
         curScene = SceneManager.GetActiveScene().buildIndex;
@@ -21,6 +23,10 @@ public class Player_Interact : MonoBehaviour
         playerControls.Interact.Interact.performed += ActivateInteractable;
 
         currentInteract = null;
+        if(initialScene) { 
+            initialScene = false;
+            return;
+        }
         transform.position = previousPosition.LastPositionAtScene[curScene];
     }
 
