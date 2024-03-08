@@ -6,7 +6,7 @@ public class Player_Inventory : MonoBehaviour
 {
     public static Player_Inventory Instance { get; private set; }
 
-    public List<ItemParentClass> inventory;
+    public List<Item> inventory;
 
     private void Awake()
     {
@@ -16,9 +16,9 @@ public class Player_Inventory : MonoBehaviour
         inventory = new();
     }
 
-    public void AddToInventory(ItemParentClass item)
+    public void AddToInventory(Item item)
     {
-        ItemParentClass copy = item;
+        Item copy = item;
         inventory.Add(copy);
     }
 }

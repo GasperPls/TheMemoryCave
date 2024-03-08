@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemParentClass : Interactable
+public abstract class Item : Interactable
 {
     protected abstract void UseItem();
     public sealed override void Interact()
