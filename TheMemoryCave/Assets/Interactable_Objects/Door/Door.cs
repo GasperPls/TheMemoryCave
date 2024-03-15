@@ -17,11 +17,17 @@ public class Door : Interactable
     }
     public override void Interact()
     {
-        // if(key) {
-        //     //if player doesn't have key
-        //     //  let player know, they need key
-        // }
+        if(key && !Player_Inventory.Instance.FindItem(key))
+        {
+            CantOpenDoor();
+            return;
+        }
         LoadScene();
+    }
+
+    private void CantOpenDoor()
+    {
+        Debug.Log("You can't open the door. You don't have the right key!");
     }
 
     private void LoadScene()

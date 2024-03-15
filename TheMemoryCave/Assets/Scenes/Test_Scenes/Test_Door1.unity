@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &277078811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2171951478399289174, guid: 26ef601cc140ee040b1579a8f7a9d446, type: 3}
+  m_PrefabInstance: {fileID: 2449900160635854391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd6d13a85cf1a7458f32f9b0224eef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1296901672890589355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,6 +186,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8553783855590131483, guid: 33d9b9c0f1acee14b99a091e552b16ee, type: 3}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 277078811}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -247,7 +262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593482557663863094, guid: 26ef601cc140ee040b1579a8f7a9d446, type: 3}
       propertyPath: m_Name
-      value: Key
+      value: Yellow_Key
       objectReference: {fileID: 0}
     - target: {fileID: 5921149223515055948, guid: 26ef601cc140ee040b1579a8f7a9d446, type: 3}
       propertyPath: m_LocalPosition.x

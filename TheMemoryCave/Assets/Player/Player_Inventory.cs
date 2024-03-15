@@ -21,4 +21,9 @@ public class Player_Inventory : MonoBehaviour
         Item copy = item;
         inventory.Add(copy);
     }
+
+    public bool FindItem(Item item)
+    {
+        return inventory.Find(x => item);
+    }
 }

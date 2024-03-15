@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Item : Interactable
 {
+    public bool IsConsumable {get; protected set;} = false;
     protected abstract void UseItem();
     public sealed override void Interact()
     {
