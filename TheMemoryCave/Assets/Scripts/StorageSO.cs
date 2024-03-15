@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New_Previous_Position", menuName = "Settings/LastPosition")]
+[CreateAssetMenu(fileName = "New_Storage_Object", menuName = "ScriptableObjects/Storage")]
 public class StorageSO : ScriptableObject
 {
-    public List<Vector3> LastPositionAtScene;
+    public List<Item> storage;
 }
