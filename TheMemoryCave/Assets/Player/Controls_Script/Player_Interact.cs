@@ -22,11 +22,17 @@ public class Player_Interact : MonoBehaviour
         playerControls.Interact.Enable();
         playerControls.Interact.Interact.performed += ActivateInteractable;
 
+        while(previousPosition.LastPositionAtScene.Count < SceneManager.sceneCountInBuildSettings)
+        {
+            previousPosition.LastPositionAtScene.Add(Vector3.zero);
+        }
+
         currentInteract = null;
         if(initialScene) { 
             initialScene = false;
             return;
         }
+
         transform.position = previousPosition.LastPositionAtScene[curScene];
     }
 
