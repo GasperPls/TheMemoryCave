@@ -9,7 +9,6 @@ public abstract class Item : Interactable
     public sealed override void Interact()
     {
         Player_Inventory.Instance.AddToInventory(this);
-        Debug.Log("Added " + this.name + " to my inventory");
         this.GetComponent<SpriteRenderer>().enabled = false;
         this.GetComponent<Collider2D>().enabled = false;
     }
