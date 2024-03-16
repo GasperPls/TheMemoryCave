@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Door : Interactable
 {
     [SerializeField] Key key;
-    [SerializeField][Min(0)] int sceneNumber;
+    [SerializeField][Min(-1)] int sceneNumber;
 
     private void Awake() {
         if(sceneNumber > SceneManager.sceneCountInBuildSettings) 
@@ -17,12 +17,12 @@ public class Door : Interactable
     }
     public override void Interact()
     {
-        if(key && !PlayerHandler.Instance.GetComponent<Player_Inventory>().FindItem(key))
+        if(sceneNumber == -1) { return; }
+        if(key && !PlayerController.Instance.FindKey(key))
         {
             CantOpenDoor();
             return;
         }
-        // Save player position
         LoadScene();
     }
 

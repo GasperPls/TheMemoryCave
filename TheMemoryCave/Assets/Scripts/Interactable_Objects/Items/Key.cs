@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public class Key : Item
+public class Key : Interactable
 {
-    
-    private void Awake() {
-        base.IsConsumable = true;
-    }
-
-    protected override void UseItem()
+    public sealed override void Interact()
     {
-        Debug.Log("I love waffles");
+        PlayerController.Instance.AddKey(this);
+        Destroy(gameObject);
     }
 }
