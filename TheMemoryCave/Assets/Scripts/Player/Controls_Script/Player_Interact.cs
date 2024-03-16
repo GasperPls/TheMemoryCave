@@ -31,7 +31,7 @@ public class Player_Interact : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         Interactable i = other.GetComponent<Interactable>();
         if(!i) { return; }
-        Debug.Log("I am on " + other.name);
+        // Debug.Log("I am on " + other.name);
         currentInteract = i;
     }
 

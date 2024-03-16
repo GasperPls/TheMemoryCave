@@ -8,7 +8,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float moveSpeed = 1;
     [SerializeField] float jumpPower = 50;
     /// <summary> How much time, in seconds, between jumps there should be </summary>
-    [SerializeField] float jumpDelay = 1f;
+    // [SerializeField] float jumpDelay = 1f;
     [SerializeField] bool isDoubleJump = true;
     [SerializeField] float floatGravScale = 1f;
     [SerializeField] float dashDist = 1f;

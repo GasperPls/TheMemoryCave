@@ -9,6 +9,13 @@ public class PlayerController : MonoBehaviour
     private void Awake() {
         if (Instance == null) { Instance = this; }
         else { Destroy(gameObject); }
+
+        Debug.Log("New scene loaded!");
+        Debug.Log("I have these keys: ");
+        foreach (string key in Keys)
+        {
+            Debug.Log(key);
+        }
     }
 
     public void AddKey(Key key)
