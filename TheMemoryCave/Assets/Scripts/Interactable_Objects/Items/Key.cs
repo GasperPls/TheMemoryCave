@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Key : Item
 {
+    
     private void Awake() {
         base.IsConsumable = true;
     }

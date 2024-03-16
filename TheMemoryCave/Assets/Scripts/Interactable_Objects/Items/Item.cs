@@ -4,12 +4,15 @@ using UnityEngine;
 
 public abstract class Item : Interactable
 {
+    static private bool pickedUp = false;
     public bool IsConsumable {get; protected set;} = false;
     protected abstract void UseItem();
     public sealed override void Interact()
     {
-        Player_Inventory.Instance.AddToInventory(this);
+        if(pickedUp) { return; }
+        pickedUp = true;
         this.GetComponent<SpriteRenderer>().enabled = false;
         this.GetComponent<Collider2D>().enabled = false;
+        PlayerHandler.Instance.GetComponent<Player_Inventory>().AddToInventory(this);
     }
 }

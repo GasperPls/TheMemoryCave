@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &612877917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612877918}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &612877918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612877917}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 648307481}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &648307480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,9 +208,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5116162247393579075, guid: f8e0d6bd4da4c934190ec4fcc499f76f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 612877918}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8e0d6bd4da4c934190ec4fcc499f76f, type: 3}
+--- !u!4 &648307481 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5116162247393579075, guid: f8e0d6bd4da4c934190ec4fcc499f76f, type: 3}
+  m_PrefabInstance: {fileID: 648307480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &804058283
 PrefabInstance:
   m_ObjectHideFlags: 0

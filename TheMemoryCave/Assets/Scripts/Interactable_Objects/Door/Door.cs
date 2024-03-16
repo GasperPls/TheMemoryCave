@@ -17,11 +17,12 @@ public class Door : Interactable
     }
     public override void Interact()
     {
-        if(key && !Player_Inventory.Instance.FindItem(key))
+        if(key && !PlayerHandler.Instance.GetComponent<Player_Inventory>().FindItem(key))
         {
             CantOpenDoor();
             return;
         }
+        // Save player position
         LoadScene();
     }
 
